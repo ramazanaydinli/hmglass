@@ -1,153 +1,201 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
+import { ChevronLeftIcon, ChevronRightIcon, XMarkIcon, MagnifyingGlassPlusIcon } from "@heroicons/react/24/outline";
+import { useLanguage } from "@/context/LanguageContext";
 
-const projects = [
-    {
-        id: 1,
-        src: "/hm1.jpg",
-        alt: "HM Glass Dükkan Cephesi",
-        title: "Mağaza Cephesi",
-        description: "Modern ve davetkar mağaza girişimiz.",
-    },
-    {
-        id: 2,
-        src: "/hm2.jpg",
-        alt: "HM Glass Bina Görünümü",
-        title: "Genel Görünüm",
-        description: "Geniş hizmet kapasitemizle hizmetinizdeyiz.",
-    },
-    {
-        id: 3,
-        src: "/hm3.jpg",
-        alt: "Duşakabin Uygulaması",
-        title: "Duşakabin Sistemleri",
-        description: "Şık ve kullanışlı özel tasarım duşakabinler.",
-    },
-    {
-        id: 4,
-        src: "/hm4.jpg",
-        alt: "PVC Pencere",
-        title: "PVC Pencere Sistemleri",
-        description: "Yüksek yalıtımlı ve estetik PVC doğrama çözümleri.",
-    },
-    {
-        id: 5,
-        src: "/hm5.jpg",
-        alt: "Korkuluk",
-        title: "Korkuluk Sistemleri",
-        description: "Güvenli ve şık alüminyum korkuluk uygulamaları.",
-    },
-    {
-        id: 6,
-        src: "/hm6.jpg",
-        alt: "Pimapen Çift Kapı",
-        title: "Pimapen Kapı",
-        description: "Dayanıklı ve fonksiyonel çift kanat kapı sistemleri.",
-    },
+const projectImages = [
+    "/hm1.jpg",
+    "/hm2.jpg",
+    "/hm3.jpg",
+    "/hm4.jpg",
+    "/hm5.jpg",
+    "/hm6.jpg",
 ];
 
 export default function Projects() {
+    const { t } = useLanguage();
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
-    // Otomatik geçiş için efekt
-    useEffect(() => {
-        const timer = setInterval(() => {
-            nextSlide();
-        }, 5000); // 5 saniyede bir değişir
-
-        return () => clearInterval(timer);
-    }, [currentIndex]);
-
-    const prevSlide = () => {
+    // Slide Geçiş Fonksiyonları
+    const prevSlide = useCallback(() => {
         const isFirstSlide = currentIndex === 0;
-        const newIndex = isFirstSlide ? projects.length - 1 : currentIndex - 1;
+        const newIndex = isFirstSlide ? t.projects.items.length - 1 : currentIndex - 1;
         setCurrentIndex(newIndex);
-    };
+    }, [currentIndex, t.projects.items.length]);
 
-    const nextSlide = () => {
-        const isLastSlide = currentIndex === projects.length - 1;
+    const nextSlide = useCallback(() => {
+        const isLastSlide = currentIndex === t.projects.items.length - 1;
         const newIndex = isLastSlide ? 0 : currentIndex + 1;
         setCurrentIndex(newIndex);
-    };
+    }, [currentIndex, t.projects.items.length]);
 
+    // HATA VEREN KISIM BURASIYDI: slideIndex: number olarak düzelttik
     const goToSlide = (slideIndex: number) => {
         setCurrentIndex(slideIndex);
     };
 
-    return (
-        <div className="bg-white py-24 sm:py-32" id="projects">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                <div className="mx-auto max-w-2xl text-center mb-16">
-                    <h2 className="text-base font-semibold leading-7 text-hm-orange">Projelerimiz</h2>
-                    <p className="mt-2 text-3xl font-bold tracking-tight text-hm-dark sm:text-4xl">
-                        Son Çalışmalarımızdan Kareler
-                    </p>
-                    <p className="mt-6 text-lg leading-8 text-gray-600">
-                        Kalite ve estetiği buluşturduğumuz örnek uygulamalarımız.
-                    </p>
-                </div>
+    // Klavye Kontrolleri
+    useEffect(() => {
+        // Burada da e (event) için KeyboardEvent türünü belirttik
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (!isModalOpen) return;
+            if (e.key === "Escape") setIsModalOpen(false);
+            if (e.key === "ArrowLeft") prevSlide();
+            if (e.key === "ArrowRight") nextSlide();
+        };
 
-                <div className="relative max-w-4xl mx-auto group">
-                    {/* Ana Resim ve Kontroller */}
-                    <div className="relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl bg-gray-100">
+        window.addEventListener("keydown", handleKeyDown);
+        return () => window.removeEventListener("keydown", handleKeyDown);
+    }, [isModalOpen, prevSlide, nextSlide]);
+
+    // Otomatik Kaydırma
+    useEffect(() => {
+        if (isModalOpen) return;
+        const interval = setInterval(() => {
+            nextSlide();
+        }, 5000);
+        return () => clearInterval(interval);
+    }, [currentIndex, isModalOpen, nextSlide]);
+
+    return (
+        <>
+            <section className="bg-white py-12 sm:py-20 relative" id="projects">
+                <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                    
+                    {/* Başlık Bölümü */}
+                    <div className="mx-auto max-w-2xl text-center mb-20">
+                        <h2 className="text-sm font-bold tracking-[0.2em] text-hm-orange uppercase mb-4">
+                            {t.projects.badge}
+                        </h2>
+                        <p className="text-3xl font-bold tracking-tight text-hm-dark sm:text-5xl">
+                            {t.projects.title} <span className="text-hm-orange">{t.projects.titleHighlight}</span>
+                        </p>
+                        <p className="mt-6 text-lg leading-8 text-gray-600 font-light">
+                            {t.projects.description}
+                        </p>
+                    </div>
+
+                    {/* Slider Alanı */}
+                    <div className="relative max-w-5xl mx-auto group">
+                        
+                        {/* Resim Container */}
+                        <div 
+                            className="relative h-[400px] md:h-[600px] w-full overflow-hidden rounded-3xl shadow-sm border border-gray-100/50 bg-gray-50 cursor-zoom-in"
+                            onClick={() => setIsModalOpen(true)}
+                        >
+                            <Image
+                                src={projectImages[currentIndex]}
+                                alt={t.projects.items[currentIndex].title}
+                                fill
+                                className="object-cover transition-transform duration-700 hover:scale-105"
+                                priority
+                            />
+                            
+                            {/* Resim Üzerindeki Karartma */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90" />
+
+                            {/* Büyüteç İkonu */}
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                                <div className="bg-white/20 backdrop-blur-sm p-4 rounded-full border border-white/30 text-white">
+                                    <MagnifyingGlassPlusIcon className="w-8 h-8" />
+                                </div>
+                            </div>
+
+                            {/* Metin Alanı */}
+                            <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 text-white pointer-events-none">
+                                <span className="inline-block px-3 py-1 mb-3 text-xs font-bold tracking-wider uppercase border border-white/30 rounded-full backdrop-blur-sm">
+                                    {t.projects.items[currentIndex].category}
+                                </span>
+                                <h3 className="text-3xl md:text-4xl font-bold mb-2">
+                                    {t.projects.items[currentIndex].title}
+                                </h3>
+                                <p className="text-gray-300 max-w-2xl text-sm md:text-base font-light">
+                                    {t.projects.items[currentIndex].description}
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Navigasyon Okları */}
+                        <button
+                            onClick={(e) => { e.stopPropagation(); prevSlide(); }}
+                            className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white hover:text-hm-dark transition-all duration-300 opacity-0 group-hover:opacity-100 z-10"
+                        >
+                            <ChevronLeftIcon className="w-6 h-6" />
+                        </button>
+
+                        <button
+                            onClick={(e) => { e.stopPropagation(); nextSlide(); }}
+                            className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white hover:text-hm-dark transition-all duration-300 opacity-0 group-hover:opacity-100 z-10"
+                        >
+                            <ChevronRightIcon className="w-6 h-6" />
+                        </button>
+
+                        {/* Nokta Navigasyon */}
+                        <div className="flex justify-center gap-3 mt-8">
+                            {t.projects.items.map((_, slideIndex) => (
+                                <button
+                                    key={slideIndex}
+                                    onClick={() => goToSlide(slideIndex)}
+                                    className={`h-1.5 transition-all duration-500 rounded-full ${
+                                        currentIndex === slideIndex 
+                                        ? "w-8 bg-hm-orange" 
+                                        : "w-2 bg-gray-200 hover:bg-gray-300"
+                                    }`}
+                                    aria-label={`Go to slide ${slideIndex + 1}`}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* LIGHTBOX / MODAL */}
+            {isModalOpen && (
+                <div className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 transition-opacity duration-300">
+                    
+                    {/* Kapat Butonu */}
+                    <button 
+                        onClick={() => setIsModalOpen(false)}
+                        className="absolute top-6 right-6 z-50 p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-all"
+                    >
+                        <XMarkIcon className="w-10 h-10" />
+                    </button>
+
+                    {/* Modal Sol Ok */}
+                    <button 
+                        onClick={(e) => { e.stopPropagation(); prevSlide(); }}
+                        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 p-3 text-white/50 hover:text-white hover:bg-white/10 rounded-full transition-all"
+                    >
+                        <ChevronLeftIcon className="w-10 h-10" />
+                    </button>
+
+                    {/* Modal Resim */}
+                    <div className="relative w-full h-full max-w-7xl max-h-[85vh]">
                         <Image
-                            src={projects[currentIndex].src}
-                            alt={projects[currentIndex].alt}
+                            src={projectImages[currentIndex]}
+                            alt="Full Screen Project"
                             fill
-                            className="object-contain duration-500 ease-in-out"
+                            className="object-contain"
                             priority
                         />
-
-                        {/* Sol Ok */}
-                        <div className="hidden group-hover:block absolute top-[50%] -translate-y-1/2 left-5 z-10">
-                            <button
-                                onClick={prevSlide}
-                                aria-label="Önceki"
-                                className="bg-black/20 text-white p-2 rounded-full hover:bg-black/40 transition-colors"
-                            >
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                                </svg>
-                            </button>
-                        </div>
-
-                        {/* Sağ Ok */}
-                        <div className="hidden group-hover:block absolute top-[50%] -translate-y-1/2 right-5 z-10">
-                            <button
-                                onClick={nextSlide}
-                                aria-label="Sonraki"
-                                className="bg-black/20 text-white p-2 rounded-full hover:bg-black/40 transition-colors"
-                            >
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                                </svg>
-                            </button>
+                        <div className="absolute bottom-4 left-0 right-0 text-center text-white/90">
+                            <h3 className="text-xl font-bold">{t.projects.items[currentIndex].title}</h3>
+                            <p className="text-sm text-white/60 mt-1">{currentIndex + 1} / {t.projects.items.length}</p>
                         </div>
                     </div>
 
-                    {/* Açıklama (Resmin Altında) */}
-                    <div className="mt-6 text-center px-4">
-                        <h3 className="text-xl font-bold text-hm-dark">{projects[currentIndex].title}</h3>
-                        <p className="mt-2 text-base text-gray-600">{projects[currentIndex].description}</p>
-                    </div>
-
-                    {/* Alt Noktalar (Dots) */}
-                    <div className="flex justify-center py-2 mt-2 gap-2">
-                        {projects.map((slide, slideIndex) => (
-                            <div
-                                key={slideIndex}
-                                onClick={() => goToSlide(slideIndex)}
-                                className={`text-2xl cursor-pointer transition-all duration-300 ${currentIndex === slideIndex ? "text-hm-orange scale-125" : "text-gray-300 hover:text-gray-400"
-                                    }`}
-                            >
-                                •
-                            </div>
-                        ))}
-                    </div>
+                    {/* Modal Sağ Ok */}
+                    <button 
+                        onClick={(e) => { e.stopPropagation(); nextSlide(); }}
+                        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 p-3 text-white/50 hover:text-white hover:bg-white/10 rounded-full transition-all"
+                    >
+                        <ChevronRightIcon className="w-10 h-10" />
+                    </button>
                 </div>
-            </div>
-        </div>
+            )}
+        </>
     );
 }

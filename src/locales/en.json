@@ -1,0 +1,155 @@
+{
+    "header": {
+        "home": "Home",
+        "services": "Services",
+        "projects": "Projects",
+        "about": "About",
+        "contact": "Contact"
+    },
+    "whatsapp": {
+        "message": "Hello! I would like to get information about HM Glass.",
+        "tooltip": "Chat on WhatsApp"
+    },
+    "hero": {
+        "title": "Perfect",
+        "titleHighlight": "Solutions",
+        "titleEnd": "for Your Home",
+        "description": "Glass balconies, PVC joinery, shutters and turnkey renovation services with H&M Glass assurance. Quality workmanship and professional technical service.",
+        "ctaPrimary": "Get a Quote Now",
+        "ctaSecondary": "Explore Our Services"
+    },
+    "services": {
+        "badge": "Our Services",
+        "title": "Professional",
+        "titleHighlight": "Solutions",
+        "description": "We offer all the construction and decoration services your home and workplace needs under one roof.",
+        "items": [
+            {
+                "title": "Glass Balcony",
+                "description": "Modern and aesthetic glass balcony systems."
+            },
+            {
+                "title": "PVC Joinery",
+                "description": "Heat and sound insulated PVC window and door systems."
+            },
+            {
+                "title": "Aluminum Joinery",
+                "description": "Durable and stylish aluminum joinery solutions."
+            },
+            {
+                "title": "Shutter Systems",
+                "description": "Automatic and manual shutter systems."
+            },
+            {
+                "title": "Mosquito Net",
+                "description": "Mosquito net models suitable for all windows and doors."
+            },
+            {
+                "title": "Shower Cabin",
+                "description": "Custom-sized and designed shower cabins."
+            },
+            {
+                "title": "Steel Door",
+                "description": "High-security and aesthetic steel doors."
+            },
+            {
+                "title": "Kitchen & Bathroom Cabinet",
+                "description": "Functional and modern cabinet designs."
+            },
+            {
+                "title": "Renovation & Decoration",
+                "description": "Turnkey renovation services from A to Z."
+            },
+            {
+                "title": "Laminate Flooring",
+                "description": "Quality and durable flooring."
+            },
+            {
+                "title": "Iron Joinery",
+                "description": "Solid and safe iron joinery work."
+            },
+            {
+                "title": "Mirror & Decoration",
+                "description": "Decorative mirror and glass applications."
+            }
+        ]
+    },
+    "projects": {
+        "badge": "Our Projects",
+        "title": "Completed",
+        "titleHighlight": "Works",
+        "description": "Examples of our quality workmanship and customer satisfaction.",
+        "items": [
+            {
+                "title": "Store Front",
+                "description": "Our modern and inviting store entrance.",
+                "category": "Commercial"
+            },
+            {
+                "title": "General View",
+                "description": "At your service with our wide service capacity.",
+                "category": "Commercial"
+            },
+            {
+                "title": "Shower Cabin Systems",
+                "description": "Stylish and practical custom shower cabins.",
+                "category": "Bathroom"
+            },
+            {
+                "title": "PVC Window Systems",
+                "description": "Highly insulated and aesthetic PVC joinery solutions.",
+                "category": "Joinery"
+            },
+            {
+                "title": "Railing Systems",
+                "description": "Safe and stylish aluminum railing applications.",
+                "category": "Outdoor"
+            },
+            {
+                "title": "PVC Door",
+                "description": "Durable and functional double-leaf door systems.",
+                "category": "Joinery"
+            }
+        ]
+    },
+    "about": {
+        "badge": "About",
+        "title": "Who",
+        "titleHighlight": "We Are?",
+        "description": "As HM Glass, we add value to your living spaces with years of experience.",
+        "aboutTitle": "About Us",
+        "aboutText1": "HM Glass is a well-established company offering glass balcony, PVC joinery, aluminum systems and turnkey renovation services in Antalya and its surroundings. Since our establishment, we have kept customer satisfaction at the highest level by combining quality materials and expert workmanship.",
+        "aboutText2": "We closely follow the innovations in the sector and produce the most modern and functional solutions for your home and workplace. With our Shuco technical service, we offer you world-class quality.",
+        "missionTitle": "Our Mission",
+        "missionText": "To improve the quality of life by offering the most suitable, aesthetic, durable and economical solutions to the needs of our customers. To be an exemplary brand in the sector with our reliable, honest and transparent service approach.",
+        "visionTitle": "Our Vision",
+        "visionText": "To be the leading company in the construction and decoration sector in our region; to achieve sustainable growth by integrating technological developments into our business processes.",
+        "whyUsTitle": "Why HM Glass?",
+        "whyUs": [
+            {
+                "title": "Expert Team",
+                "description": "Flawless workmanship with our experienced and certified craftsmen."
+            },
+            {
+                "title": "Quality Materials",
+                "description": "Only first-class materials for long-lasting use."
+            },
+            {
+                "title": "On-Time Delivery",
+                "description": "We deliver your projects on the promised date completely."
+            }
+        ]
+    },
+    "contact": {
+        "badge": "Contact",
+        "title": "Get in",
+        "titleHighlight": "Touch",
+        "description": "Contact us for your projects and questions.",
+        "addressTitle": "Address",
+        "addressText": "Şafak, 4261. Sk. No : 4/15\n07100 Kepez/Antalya",
+        "phoneTitle": "Phone",
+        "ctaTitle": "Call Now!",
+        "ctaDescription": "Call us for free consultation and advisory service.",
+        "ctaButton": "Call Now"
+    }
+}

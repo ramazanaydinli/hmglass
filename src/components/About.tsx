@@ -1,71 +1,136 @@
+"use client";
+
+import { useLanguage } from "@/context/LanguageContext";
+import { UserGroupIcon, CheckBadgeIcon, ClockIcon } from "@heroicons/react/24/outline";
+
 export default function About() {
+    const { t } = useLanguage();
+
+    // Özel Asaydın/Marka Gölgesi
+    const customShadowStyle = {
+        boxShadow: "0 20px 40px -10px rgba(240, 84, 84, 0.15)"
+    };
+
     return (
-        <div className="bg-white py-24 sm:py-32" id="about">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                <div className="mx-auto max-w-2xl text-center mb-16">
-                    <h2 className="text-base font-semibold leading-7 text-hm-orange">Kurumsal</h2>
-                    <p className="mt-2 text-3xl font-bold tracking-tight text-hm-dark sm:text-4xl">
-                        Hakkımızda
+        <section className="bg-white py-12 sm:py-20 relative overflow-hidden" id="about">
+            <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
+                
+                {/* Header */}
+                <div className="mx-auto max-w-2xl text-center mb-20">
+                    <h2 className="text-sm font-bold tracking-[0.2em] text-hm-orange uppercase mb-4">
+                        {t.about.badge}
+                    </h2>
+                    <p className="text-3xl font-bold tracking-tight text-hm-dark sm:text-5xl">
+                        {t.about.title} <span className="text-hm-orange">{t.about.titleHighlight}</span>
                     </p>
-                    <p className="mt-6 text-lg leading-8 text-gray-600">
-                        HM Glass olarak yılların verdiği tecrübe ile yaşam alanlarınıza değer katıyoruz.
+                    <p className="mt-6 text-lg leading-8 text-gray-600 font-light">
+                        {t.about.description}
                     </p>
                 </div>
 
-                <div className="mx-auto max-w-7xl">
-                    <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
-
-                        {/* Hakkımızda */}
-                        <div>
-                            <h3 className="text-2xl font-bold tracking-tight text-hm-dark sm:text-3xl mb-6">Biz Kimiz?</h3>
-                            <p className="text-base leading-7 text-gray-600">
-                                HM Glass, Antalya ve çevresinde cam balkon, PVC doğrama, alüminyum sistemleri ve anahtar teslim tadilat hizmetleri sunan köklü bir firmadır.
-                                Kurulduğumuz günden bu yana müşteri memnuniyetini en üst seviyede tutarak, kaliteli malzeme ve usta işçiliği bir araya getiriyoruz.
-                            </p>
-                            <p className="mt-4 text-base leading-7 text-gray-600">
-                                Sektördeki yenilikleri yakından takip ediyor, eviniz ve iş yeriniz için en modern ve fonksiyonel çözümleri üretiyoruz.
-                                Shuco teknik servis hizmetimizle de dünya standartlarında kaliteyi sizlere sunuyoruz.
-                            </p>
-                        </div>
-
-                        {/* Misyon & Vizyon */}
-                        <div className="space-y-8">
-                            <div>
-                                <h3 className="text-xl font-bold tracking-tight text-hm-orange mb-3">Misyonumuz</h3>
-                                <p className="text-base leading-7 text-gray-600">
-                                    Müşterilerimizin ihtiyaçlarına en uygun, estetik, dayanıklı ve ekonomik çözümler sunarak yaşam kalitelerini artırmak.
-                                    Güvenilir, dürüst ve şeffaf hizmet anlayışımızla sektörde örnek bir marka olmak.
-                                </p>
-                            </div>
-                            <div>
-                                <h3 className="text-xl font-bold tracking-tight text-hm-orange mb-3">Vizyonumuz</h3>
-                                <p className="text-base leading-7 text-gray-600">
-                                    Bölgemizde yapı ve dekorasyon sektörünün lider firması olmak; teknolojik gelişmeleri iş süreçlerimize entegre ederek sürdürülebilir büyüme sağlamak.
-                                </p>
-                            </div>
-                        </div>
+                {/* Ana İçerik */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 mb-32 items-center">
+                    <div>
+                        <h3 className="text-4xl font-bold text-hm-dark mb-6 leading-tight">
+                            {t.about.aboutTitle}
+                        </h3>
+                        <div className="mb-6"></div>
                     </div>
-
-                    {/* Neden Biz? */}
-                    <div className="mt-16 sm:mt-24">
-                        <h3 className="text-2xl font-bold tracking-tight text-hm-dark sm:text-3xl mb-8 text-center">Neden HM Glass?</h3>
-                        <dl className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
-                            <div className="flex flex-col items-center text-center">
-                                <dt className="text-lg font-semibold leading-7 text-hm-dark">Uzman Kadro</dt>
-                                <dd className="mt-1 text-base leading-7 text-gray-600">Alanında deneyimli ve sertifikalı ustalarımızla hatasız işçilik.</dd>
-                            </div>
-                            <div className="flex flex-col items-center text-center">
-                                <dt className="text-lg font-semibold leading-7 text-hm-dark">Kaliteli Malzeme</dt>
-                                <dd className="mt-1 text-base leading-7 text-gray-600">Uzun ömürlü kullanım için sadece birinci sınıf malzemeler.</dd>
-                            </div>
-                            <div className="flex flex-col items-center text-center">
-                                <dt className="text-lg font-semibold leading-7 text-hm-dark">Zamanında Teslimat</dt>
-                                <dd className="mt-1 text-base leading-7 text-gray-600">Projelerinizi söz verdiğimiz tarihte eksiksiz teslim ediyoruz.</dd>
-                            </div>
-                        </dl>
+                    <div className="space-y-6 text-lg leading-8 text-gray-600 font-light">
+                        <p>{t.about.aboutText1}</p>
+                        <p>{t.about.aboutText2}</p>
                     </div>
                 </div>
+
+                {/* Misyon & Vizyon */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-32">
+                    {/* Misyon */}
+                    <div 
+                        className="bg-white/80 backdrop-blur-sm p-10 rounded-3xl border border-gray-100/50 transition-all duration-300 hover:-translate-y-1 hover:bg-white"
+                        style={customShadowStyle} // ÖZEL GÖLGE EKLENDİ
+                    >
+                        <h4 className="text-xl font-bold text-hm-dark mb-4 flex items-center gap-3">
+                            <span className="w-2 h-2 rounded-full bg-hm-orange"></span>
+                            {t.about.missionTitle}
+                        </h4>
+                        <p className="text-gray-600 leading-relaxed">
+                            {t.about.missionText}
+                        </p>
+                    </div>
+
+                    {/* Vizyon */}
+                    <div 
+                        className="bg-white/80 backdrop-blur-sm p-10 rounded-3xl border border-gray-100/50 transition-all duration-300 hover:-translate-y-1 hover:bg-white"
+                        style={customShadowStyle} // ÖZEL GÖLGE EKLENDİ
+                    >
+                        <h4 className="text-xl font-bold text-hm-dark mb-4 flex items-center gap-3">
+                            <span className="w-2 h-2 rounded-full bg-hm-orange"></span>
+                            {t.about.visionTitle}
+                        </h4>
+                        <p className="text-gray-600 leading-relaxed">
+                            {t.about.visionText}
+                        </p>
+                    </div>
+                </div>
+
+                {/* Neden Biz? */}
+                <div>
+                    <h3 className="text-3xl font-bold text-hm-dark mb-16 text-center">
+                        {t.about.whyUsTitle}
+                    </h3>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                        {/* 1. Madde */}
+                        <div className="flex flex-col items-center group">
+                            <div 
+                                className="w-16 h-16 rounded-full bg-white flex items-center justify-center text-hm-orange mb-6 group-hover:bg-hm-orange group-hover:text-white transition-all duration-500 border border-gray-100/50"
+                                style={customShadowStyle} // İKON KUTUSUNA ÖZEL GÖLGE EKLENDİ
+                            >
+                                <UserGroupIcon className="w-8 h-8" />
+                            </div>
+                            <h4 className="text-xl font-bold text-hm-dark mb-3">
+                                {t.about.whyUs[0].title}
+                            </h4>
+                            <p className="text-gray-600 leading-relaxed">
+                                {t.about.whyUs[0].description}
+                            </p>
+                        </div>
+
+                        {/* 2. Madde */}
+                        <div className="flex flex-col items-center group">
+                            <div 
+                                className="w-16 h-16 rounded-full bg-white flex items-center justify-center text-hm-orange mb-6 group-hover:bg-hm-orange group-hover:text-white transition-all duration-500 border border-gray-100/50"
+                                style={customShadowStyle} // İKON KUTUSUNA ÖZEL GÖLGE EKLENDİ
+                            >
+                                <CheckBadgeIcon className="w-8 h-8" />
+                            </div>
+                            <h4 className="text-xl font-bold text-hm-dark mb-3">
+                                {t.about.whyUs[1].title}
+                            </h4>
+                            <p className="text-gray-600 leading-relaxed">
+                                {t.about.whyUs[1].description}
+                            </p>
+                        </div>
+
+                        {/* 3. Madde */}
+                        <div className="flex flex-col items-center group">
+                            <div 
+                                className="w-16 h-16 rounded-full bg-white flex items-center justify-center text-hm-orange mb-6 group-hover:bg-hm-orange group-hover:text-white transition-all duration-500 border border-gray-100/50"
+                                style={customShadowStyle} // İKON KUTUSUNA ÖZEL GÖLGE EKLENDİ
+                            >
+                                <ClockIcon className="w-8 h-8" />
+                            </div>
+                            <h4 className="text-xl font-bold text-hm-dark mb-3">
+                                {t.about.whyUs[2].title}
+                            </h4>
+                            <p className="text-gray-600 leading-relaxed">
+                                {t.about.whyUs[2].description}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </div>
+        </section>
     );
 }

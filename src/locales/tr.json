@@ -1,0 +1,155 @@
+{
+    "header": {
+        "home": "Ana Sayfa",
+        "services": "Hizmetlerimiz",
+        "projects": "Projelerimiz",
+        "about": "Hakkımızda",
+        "contact": "İletişim"
+    },
+    "whatsapp": {
+        "message": "Merhaba! HM Glass hakkında bilgi almak istiyorum.",
+        "tooltip": "WhatsApp'tan Yazın"
+    },
+    "hero": {
+        "title": "Eviniz İçin",
+        "titleHighlight": "Mükemmel",
+        "titleEnd": "Çözümler",
+        "description": "H&M Glass güvencesiyle cam balkon, PVC doğrama, panjur ve anahtar teslim tadilat hizmetleri. Kaliteli işçilik ve profesyonel teknik servis.",
+        "ctaPrimary": "Hemen Teklif Al",
+        "ctaSecondary": "Hizmetlerimizi İnceleyin"
+    },
+    "services": {
+        "badge": "Hizmetlerimiz",
+        "title": "Profesyonel",
+        "titleHighlight": "Çözümler",
+        "description": "Evinizin ve iş yerinizin ihtiyacı olan tüm yapı ve dekorasyon hizmetlerini tek bir çatı altında sunuyoruz.",
+        "items": [
+            {
+                "title": "Cam Balkon",
+                "description": "Modern ve estetik cam balkon sistemleri."
+            },
+            {
+                "title": "PVC Doğrama",
+                "description": "Isı ve ses yalıtımlı PVC pencere ve kapı sistemleri."
+            },
+            {
+                "title": "Alüminyum Doğrama",
+                "description": "Dayanıklı ve şık alüminyum doğrama çözümleri."
+            },
+            {
+                "title": "Panjur Sistemleri",
+                "description": "Otomatik ve manuel panjur sistemleri."
+            },
+            {
+                "title": "Sineklik",
+                "description": "Her türlü pencere ve kapıya uygun sineklik modelleri."
+            },
+            {
+                "title": "Duşa Kabin",
+                "description": "Özel ölçü ve tasarım duşakabinler."
+            },
+            {
+                "title": "Çelik Kapı",
+                "description": "Yüksek güvenlikli ve estetik çelik kapılar."
+            },
+            {
+                "title": "Mutfak & Banyo Dolabı",
+                "description": "Fonksiyonel ve modern dolap tasarımları."
+            },
+            {
+                "title": "Tadilat & Dekorasyon",
+                "description": "Anahtar teslim A'dan Z'ye tadilat hizmetleri."
+            },
+            {
+                "title": "Laminant Parke",
+                "description": "Kaliteli ve uzun ömürlü zemin kaplamaları."
+            },
+            {
+                "title": "Demir Doğrama",
+                "description": "Sağlam ve güvenli demir doğrama işleri."
+            },
+            {
+                "title": "Ayna & Dekor",
+                "description": "Dekoratif ayna ve cam uygulamaları."
+            }
+        ]
+    },
+    "projects": {
+        "badge": "Projelerimiz",
+        "title": "Tamamlanmış",
+        "titleHighlight": "İşlerimiz",
+        "description": "Kaliteli işçiliğimizin ve müşteri memnuniyetimizin örnekleri.",
+        "items": [
+            {
+                "title": "Mağaza Cephesi",
+                "description": "Modern ve davetkar mağaza girişimiz.",
+                "category": "Ticari"
+            },
+            {
+                "title": "Genel Görünüm",
+                "description": "Geniş hizmet kapasitemizle hizmetinizdeyiz.",
+                "category": "Ticari"
+            },
+            {
+                "title": "Duşakabin Sistemleri",
+                "description": "Şık ve kullanışlı özel tasarım duşakabinler.",
+                "category": "Banyo"
+            },
+            {
+                "title": "PVC Pencere Sistemleri",
+                "description": "Yüksek yalıtımlı ve estetik PVC doğrama çözümleri.",
+                "category": "Doğrama"
+            },
+            {
+                "title": "Korkuluk Sistemleri",
+                "description": "Güvenli ve şık alüminyum korkuluk uygulamaları.",
+                "category": "Dış Mekan"
+            },
+            {
+                "title": "Pimapen Kapı",
+                "description": "Dayanıklı ve fonksiyonel çift kanat kapı sistemleri.",
+                "category": "Doğrama"
+            }
+        ]
+    },
+    "about": {
+        "badge": "Hakkımızda",
+        "title": "Biz",
+        "titleHighlight": "Kimiz?",
+        "description": "HM Glass olarak yılların verdiği tecrübe ile yaşam alanlarınıza değer katıyoruz.",
+        "aboutTitle": "Hakkımızda",
+        "aboutText1": "HM Glass, Antalya ve çevresinde cam balkon, PVC doğrama, alüminyum sistemleri ve anahtar teslim tadilat hizmetleri sunan köklü bir firmadır. Kurulduğumuz günden bu yana müşteri memnuniyetini en üst seviyede tutarak, kaliteli malzeme ve usta işçiliği bir araya getiriyoruz.",
+        "aboutText2": "Sektördeki yenilikleri yakından takip ediyor, eviniz ve iş yeriniz için en modern ve fonksiyonel çözümleri üretiyoruz. Shuco teknik servis hizmetimizle de dünya standartlarında kaliteyi sizlere sunuyoruz.",
+        "missionTitle": "Misyonumuz",
+        "missionText": "Müşterilerimizin ihtiyaçlarına en uygun, estetik, dayanıklı ve ekonomik çözümler sunarak yaşam kalitelerini artırmak. Güvenilir, dürüst ve şeffaf hizmet anlayışımızla sektörde örnek bir marka olmak.",
+        "visionTitle": "Vizyonumuz",
+        "visionText": "Bölgemizde yapı ve dekorasyon sektörünün lider firması olmak; teknolojik gelişmeleri iş süreçlerimize entegre ederek sürdürülebilir büyüme sağlamak.",
+        "whyUsTitle": "Neden HM Glass?",
+        "whyUs": [
+            {
+                "title": "Uzman Kadro",
+                "description": "Alanında deneyimli ve sertifikalı ustalarımızla hatasız işçilik."
+            },
+            {
+                "title": "Kaliteli Malzeme",
+                "description": "Uzun ömürlü kullanım için sadece birinci sınıf malzemeler."
+            },
+            {
+                "title": "Zamanında Teslimat",
+                "description": "Projelerinizi söz verdiğimiz tarihte eksiksiz teslim ediyoruz."
+            }
+        ]
+    },
+    "contact": {
+        "badge": "İletişim",
+        "title": "Bize",
+        "titleHighlight": "Ulaşın",
+        "description": "Projeleriniz ve sorularınız için bizimle iletişime geçin.",
+        "addressTitle": "Adres",
+        "addressText": "Şafak, 4261. Sk. No : 4/15\n07100 Kepez/Antalya",
+        "phoneTitle": "Telefon",
+        "ctaTitle": "Hemen Arayın!",
+        "ctaDescription": "Ücretsiz keşif ve danışmanlık hizmeti için bizi arayın.",
+        "ctaButton": "Hemen Ara"
+    }
+}
