@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -10,6 +14,10 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-hm-dark: #222831;
+  --color-hm-orange: #F05454;
+  --color-hm-gray: #393E46;
+  --color-hm-light: #F5F5F5;
 }
 
 @media (prefers-color-scheme: dark) {
