@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "HM Glass | Antalya Cam Balkon ve Yapı Sistemleri",
     description: descriptionText,
-    url: "https://hmglass.com.tr", // Burası domain adresiniz olmalı
+    url: "https://www.hmglass.com.tr", // Burası domain adresiniz olmalı
     siteName: "HM Glass",
     locale: "tr_TR",
     type: "website",
@@ -72,7 +72,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness", // Veya 'GeneralContractor'
   "name": "HM Glass",
-  "image": "https://hmglass.com.tr/logo.png", // Domain başa eklenmeli
+  "image": "https://www.hmglass.com.tr/logo.png", // Domain başa eklenmeli
   "description": descriptionText,
   "address": {
     "@type": "PostalAddress",
