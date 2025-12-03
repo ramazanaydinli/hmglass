@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
-import { LanguageIcon } from "@heroicons/react/24/outline";
 
 export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -66,15 +65,38 @@ export default function Header() {
 
                 {/* LANGUAGE SWITCHER & CTA BUTTON */}
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center gap-4">
-                    <button
-                        onClick={() => setLanguage(language === "tr" ? "en" : "tr")}
-                        className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-hm-dark hover:bg-gray-100 transition-colors"
-                    >
-                        <LanguageIcon className="w-4 h-4" />
-                        <span>{language === "tr" ? "EN" : "TR"}</span>
-                    </button>
+                    <div className="flex items-center gap-2">
+                        <button
+                            onClick={() => setLanguage("tr")}
+                            aria-pressed={language === "tr"}
+                            className={`px-3 py-2 rounded-lg text-sm font-semibold transition-colors ${
+                                language === "tr"
+                                    ? "bg-hm-orange text-white"
+                                    : "text-hm-dark hover:bg-gray-100"
+                            }`}
+                        >
+                            TR
+                        </button>
 
-                    <Link href="/#contact" className="rounded-md bg-hm-dark px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-hm-orange transition-colors">
+                        <span className="text-sm text-gray-400">|</span>
+
+                        <button
+                            onClick={() => setLanguage("en")}
+                            aria-pressed={language === "en"}
+                            className={`px-3 py-2 rounded-lg text-sm font-semibold transition-colors ${
+                                language === "en"
+                                    ? "bg-hm-orange text-white"
+                                    : "text-hm-dark hover:bg-gray-100"
+                            }`}
+                        >
+                            EN
+                        </button>
+                    </div>
+
+                    <Link
+                        href="/#contact"
+                        className="rounded-md bg-hm-dark px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-hm-orange transition-colors"
+                    >
                         {t.contact.ctaButton}
                     </Link>
                 </div>
@@ -86,7 +108,9 @@ export default function Header() {
                     <div className="fixed inset-0 z-50 bg-black/20" onClick={() => setMobileMenuOpen(false)} />
                     <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                         <div className="flex items-center justify-between">
-                            <span className="text-2xl font-bold text-hm-dark">HM<span className="text-hm-orange">glass</span></span>
+                            <span className="text-2xl font-bold text-hm-dark">
+                                HM<span className="text-hm-orange">glass</span>
+                            </span>
                             <button
                                 type="button"
                                 className="-m-2.5 rounded-md p-2.5 text-gray-700"
@@ -113,16 +137,35 @@ export default function Header() {
                                     ))}
                                 </div>
                                 <div className="py-6 space-y-2">
-                                    <button
-                                        onClick={() => {
-                                            setLanguage(language === "tr" ? "en" : "tr");
-                                            setMobileMenuOpen(false);
-                                        }}
-                                        className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-hm-dark hover:bg-gray-100 transition-colors w-full"
-                                    >
-                                        <LanguageIcon className="w-4 h-4" />
-                                        <span>{language === "tr" ? "English" : "Türkçe"}</span>
-                                    </button>
+                                    <div className="flex gap-2 px-3">
+                                        <button
+                                            onClick={() => {
+                                                setLanguage("tr");
+                                                setMobileMenuOpen(false);
+                                            }}
+                                            className={`flex-1 px-3 py-2 rounded-lg text-sm font-semibold text-center transition-colors ${
+                                                language === "tr"
+                                                    ? "bg-hm-orange text-white"
+                                                    : "text-hm-dark hover:bg-gray-100"
+                                            }`}
+                                        >
+                                            TR
+                                        </button>
+                                        <button
+                                            onClick={() => {
+                                                setLanguage("en");
+                                                setMobileMenuOpen(false);
+                                            }}
+                                            className={`flex-1 px-3 py-2 rounded-lg text-sm font-semibold text-center transition-colors ${
+                                                language === "en"
+                                                    ? "bg-hm-orange text-white"
+                                                    : "text-hm-dark hover:bg-gray-100"
+                                            }`}
+                                        >
+                                            EN
+                                        </button>
+                                    </div>
+
                                     <Link
                                         href="/#contact"
                                         className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white bg-hm-dark hover:bg-hm-orange transition-colors text-center"
