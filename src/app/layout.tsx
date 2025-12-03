@@ -10,7 +10,7 @@ const descriptionText = "Antalya, Kepez, Muratpaşa, Konyaaltı, Lara, Varsak ve
 
 export const metadata: Metadata = {
   // Title'ı biraz daha dinamik ve kapsayıcı yapıyoruz
-  metadataBase: new URL("https://hmglass.com.tr"),
+  metadataBase: new URL("https://www.hmglass.com.tr"),
   
   title: {
     default: "HM Glass | Antalya Cam Balkon, PVC Doğrama & Tadilat",
