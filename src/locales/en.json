@@ -148,8 +148,11 @@
         "addressTitle": "Address",
         "addressText": "Şafak, 4261. Sk. No : 4/15\n07100 Kepez/Antalya",
         "phoneTitle": "Phone",
+        "mobileDescription": "You can reach us 24/7.",
         "ctaTitle": "Call Now!",
         "ctaDescription": "Call us for free consultation and advisory service.",
-        "ctaButton": "Call Now"
+        "ctaButton": "Call Now",
+        "landlineTitle": "Landline",
+        "landlineDescription": "You can call us during business hours."
     }
 }

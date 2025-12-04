@@ -141,15 +141,18 @@
         ]
     },
     "contact": {
-        "badge": "İletişim",
-        "title": "Bize",
-        "titleHighlight": "Ulaşın",
-        "description": "Projeleriniz ve sorularınız için bizimle iletişime geçin.",
-        "addressTitle": "Adres",
-        "addressText": "Şafak, 4261. Sk. No : 4/15\n07100 Kepez/Antalya",
-        "phoneTitle": "Telefon",
-        "ctaTitle": "Hemen Arayın!",
-        "ctaDescription": "Ücretsiz keşif ve danışmanlık hizmeti için bizi arayın.",
-        "ctaButton": "Hemen Ara"
-    }
+    "badge": "İletişim",
+    "title": "Bize",
+    "titleHighlight": "Ulaşın",
+    "description": "Projeleriniz ve sorularınız için bizimle iletişime geçin.",
+    "addressTitle": "Adres",
+    "addressText": "Şafak, 4261. Sk. No : 4/15\n07100 Kepez/Antalya",
+    "phoneTitle": "Telefon",
+    "mobileDescription": "7/24 Bize ulaşabilirsiniz.",
+    "ctaTitle": "Hemen Arayın!",
+    "ctaDescription": "Ücretsiz keşif ve danışmanlık hizmeti için bizi arayın.",
+    "ctaButton": "Hemen Ara",
+    "landlineTitle": "Sabit Telefon", 
+    "landlineDescription": "Mesai saatleri içinde arayabilirsiniz."
+}
 }
