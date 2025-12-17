@@ -120,7 +120,7 @@ export default function Contact() {
                     <div className="h-[500px] w-full rounded-3xl overflow-hidden shadow-2xl border border-white/10 relative">
                         {/* Haritayı hafif koyu modda göstermek için invert filtresi kullanıyoruz */}
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3189.963476839352!2d30.65586607656209!3d36.91508207221376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c391d4e0d9b0b3%3A0x6a0a0a0a0a0a0a0a!2sAntalya!5e0!3m2!1str!2str!4v1620000000000!5m2!1str!2str"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199.38185653819724!2d30.64500015107676!3d36.91164133343281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c38f152b141d57%3A0x606e17f94fa3bfcb!2sHM%20Glass!5e0!3m2!1str!2str!4v1765970751621!5m2!1str!2str" 
                             width="100%"
                             height="100%"
                             style={{ border: 0, filter: "invert(90%) hue-rotate(180deg)" }}
